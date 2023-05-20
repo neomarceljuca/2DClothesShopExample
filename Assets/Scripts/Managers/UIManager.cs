@@ -1,52 +1,54 @@
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    private static UIManager instance;
+    [SerializeField] GameObject InventoryPanel;
+    [SerializeField] GameObject ShopPanel;
+    [SerializeField] TextMeshProUGUI CurrentMoney;
 
-    // Get the singleton instance
-    public static UIManager Instance
+
+    public delegate void PanelShownEventHandler();
+    public delegate void PanelClosedEventHandler();
+    public static event PanelShownEventHandler PanelShown;
+    public static event PanelClosedEventHandler PanelClosed;
+
+    private void Start()
     {
-        get
-        {
-            // If the instance doesn't exist, find it in the scene
-            if (instance == null)
-            {
-                instance = FindObjectOfType<UIManager>();
-
-                // If it still doesn't exist, create a new GameObject and add the script to it
-                if (instance == null)
-                {
-                    GameObject obj = new GameObject("UIManager");
-                    instance = obj.AddComponent<UIManager>();
-                }
-            }
-
-            return instance;
-        }
+        UpdateCurrentMoney();
     }
 
-    // Optional: Add any other variables or methods related to the UI manager
 
-    private void Awake()
+    public void UpdateCurrentMoney() 
     {
-        // Ensure there's only one instance of the UI manager
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        CurrentMoney.text = Singleton.Instance.currentPlayer.Inventory.CurrentMoney.ToString();
     }
 
-    // Optional: Add any other initialization or setup code for the UI manager
 
-    // Example method to show how the UI manager can be used
-    public void ShowPanel(string panelName)
+    public void ShowShop(bool Active) 
     {
-        // Implementation code for showing a specific UI panel
+        ShopPanel.SetActive(Active);
+
+        PanelShown?.Invoke();
     }
+
+    public void ShowInventory(bool Active) 
+    {
+        InventoryPanel.SetActive(Active);
+
+        PanelShown?.Invoke();
+    }
+
+
+    public void ClosePanel(string panelName)
+    {
+        // Implementation code for closing a specific UI panel
+
+        // Raise the PanelClosed event
+        PanelClosed?.Invoke();
+    }
+
+
+
+
 }
