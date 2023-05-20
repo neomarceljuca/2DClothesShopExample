@@ -30,7 +30,7 @@ public class CustomAnimator : MonoBehaviour
         Rect frameRect = new Rect(column * frameWidth, row * frameHeight, frameWidth, frameHeight);
         Sprite sprite = Sprite.Create(sourceSpriteSheet, frameRect, new Vector2(0.5f, 0.5f), 32);
 
-        Debug.Log(frameRect + ". " + "\nFrame number " + frameNumber);
+        //Debug.Log(frameRect + ". " + "\nFrame number " + frameNumber);
         spriteRenderer.sprite = sprite;
     }
 

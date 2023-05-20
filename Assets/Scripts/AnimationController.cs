@@ -16,9 +16,7 @@ public class AnimationController : MonoBehaviour
     // Dictionary that has Enum PlayerDirection as keys, and returns which frames should play for that direction
     private Dictionary<AnimationState, int[]> directionFrames = new Dictionary<AnimationState, int[]>();
     private void Awake()
-    {
-        //TO DO: assign a variable for each wearable piece, set animation according to currentAnimationState. Already works for player base animation 
-
+    {  
         //Assign respective frames for each direction and state; They are the same for every spritesheet.
         directionFrames.Add(AnimationState.IdleUp, new int[] { 0 });
         directionFrames.Add(AnimationState.IdleLeft, new int[] { 9 });
@@ -37,7 +35,7 @@ public class AnimationController : MonoBehaviour
 
     public void HandleAnimations() 
     {
-        //baseCharacterAnimator.SetSpriteByFrame(directionFrames[currentAnimationState][0]);
+        //TO DO: Set each current equipment animation according to currentAnimationState. Already works for player base animation
 
         // Calculate the time interval for each frame
         float frameInterval = 1f / frameRate;
