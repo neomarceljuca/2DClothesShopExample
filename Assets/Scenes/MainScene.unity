@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 1672896301}
   - component: {fileID: 1672896302}
   - component: {fileID: 1672896303}
+  - component: {fileID: 1672896304}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -560,7 +561,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672896295}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5b559b13ff0d94bb91f30055041941, type: 2}
   m_CullingMode: 0
@@ -727,6 +728,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3655c2166c1bf54daeffad17210455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseCharacterAnimator: {fileID: 1672896304}
+  clothesAnimators: []
+  frameRate: 12
+--- !u!114 &1672896304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672896295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a219150d717556e46a7548ea47bded79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceSpriteSheet: {fileID: 2800000, guid: 34888c5b48d36d3488d9ec700c6c6be0, type: 3}
+  rows: 4
+  columns: 9
+  frameHeight: 64
+  frameWidth: 64
 --- !u!1 &1859463788
 GameObject:
   m_ObjectHideFlags: 0
