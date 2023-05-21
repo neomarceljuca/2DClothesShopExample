@@ -7,17 +7,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject ShopPanel;
     [SerializeField] TextMeshProUGUI CurrentMoney;
 
-
+    public GameObject CurrentOpenPanel;
     public delegate void PanelShownEventHandler();
     public delegate void PanelClosedEventHandler();
     public static event PanelShownEventHandler PanelShown;
     public static event PanelClosedEventHandler PanelClosed;
-
-    private void Start()
-    {
-        UpdateCurrentMoney();
-    }
-
 
     public void UpdateCurrentMoney() 
     {
@@ -28,22 +22,23 @@ public class UIManager : MonoBehaviour
     public void ShowShop(bool Active) 
     {
         ShopPanel.SetActive(Active);
-
+        CurrentOpenPanel = ShopPanel;
         PanelShown?.Invoke();
     }
 
     public void ShowInventory(bool Active) 
     {
         InventoryPanel.SetActive(Active);
-
+        CurrentOpenPanel = InventoryPanel;
         PanelShown?.Invoke();
     }
 
 
-    public void ClosePanel(string panelName)
+    public void ClosePanel()
     {
-        // Implementation code for closing a specific UI panel
-
+        if (CurrentOpenPanel == null) return;
+        CurrentOpenPanel.SetActive(false);
+        CurrentOpenPanel = null;
         // Raise the PanelClosed event
         PanelClosed?.Invoke();
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Inventory", menuName = "Inventory", order = 1)]
+[CreateAssetMenu(fileName = "Inventory", menuName = "Inventory", order = 2)]
 public class Inventory : ScriptableObject
 {
     public int CurrentMoney = 1000;

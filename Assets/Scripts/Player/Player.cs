@@ -8,16 +8,23 @@ public class Player : MonoBehaviour
     private PlayerInput playerInput;
     public Inventory Inventory;
     private PlayerActions playerActions;
+    public bool CanBuy = false;
 
 
     private void Awake()
     {
         playerInput = GetComponentInChildren<PlayerInput>();
         playerActions = GetComponentInChildren<PlayerActions>();
-        Singleton.Instance.currentPlayer = this;
+        
         // Subscribe to the PanelShown and PanelClosed events from UIManager
         UIManager.PanelShown += OnPanelShown;
         UIManager.PanelClosed += OnPanelClosed;
+    }
+
+    private void Start()
+    {
+        Singleton.Instance.currentPlayer = this;
+        Singleton.Instance.UIManager.UpdateCurrentMoney();
     }
 
     private void Update()
@@ -27,8 +34,18 @@ public class Player : MonoBehaviour
 
     public void HandleInput() 
     {
-        if (playerActions.InteractInput) Singleton.Instance.UIManager.ShowShop(true);
-    
+        if (playerActions.InteractInput) 
+        {
+            if (CanBuy) Singleton.Instance.UIManager.ShowShop(true);
+            playerActions.InteractInput = false;
+        } 
+        
+        //UI Action Map
+        if (playerActions.CancelInput) 
+        {
+            Singleton.Instance.UIManager.ClosePanel();
+            playerActions.CancelInput = false;
+        }
     }
 
 
