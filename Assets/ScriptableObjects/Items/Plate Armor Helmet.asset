@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: -1453851907, guid: 9cb4090296399944aa9b9f5f477dbc93, type: 3}
   SourceSpriteSheet: {fileID: 2800000, guid: 9cb4090296399944aa9b9f5f477dbc93, type: 3}
+  cost: 100
+  description: Stylish head protection for warriors who value brains and beauty.

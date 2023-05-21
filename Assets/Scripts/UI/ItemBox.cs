@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class ItemBox : MonoBehaviour
 {
-    Item CurrentItem;
+    public Item CurrentItem { get => currentItem; }
+    Item currentItem;
     [SerializeField] Image Icon;
     Color filledCollor = new Color(255, 255, 255, 255);
     Color emptyCollor = new Color(255, 255, 255, 0);
+    [SerializeField] GameObject border;
 
-    private void Awake()
-    {
-    }
+    
 
     private void Start()
     {
@@ -21,21 +21,27 @@ public class ItemBox : MonoBehaviour
 
     public void AssignItem(Item newItem) 
     {
-        CurrentItem = newItem;
+        currentItem = newItem;
         UpdateBoxVisual();
     }
 
 
     public void UpdateBoxVisual() 
     {
-        if (CurrentItem == null)
+        if (currentItem == null)
         {
             Icon.color = emptyCollor;
         }
         else
         {
             Icon.color = filledCollor;
-            Icon.sprite = CurrentItem.Sprite;
+            Icon.sprite = currentItem.Sprite;
         }
+    }
+
+    public void UpdateSelectionState(bool isSelected) 
+    {
+        if (isSelected) border.gameObject.SetActive(true);
+        else border.gameObject.SetActive(false);
     }
 }

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerActions : MonoBehaviour
 {
+    public EventSystem EventSystem;
     //Public Input variables for other scripts' access
     public Vector2 MovementInput { get => movementInput;}
     public bool InteractInput { get => interactInput; set => interactInput = value; }

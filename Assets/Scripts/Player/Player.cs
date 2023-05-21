@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     private PlayerInput playerInput;
     public Inventory Inventory;
-    private PlayerActions playerActions;
+    public PlayerActions playerActions;
     public bool CanBuy = false;
 
 

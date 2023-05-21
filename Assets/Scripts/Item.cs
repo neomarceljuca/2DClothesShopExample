@@ -8,4 +8,13 @@ public class Item : ScriptableObject
     public Sprite Sprite;
     public Texture2D SourceSpriteSheet;
     public int cost = 100;
+    public EquipmentCategory category;
+    public string description;
+
+
+}
+
+public enum EquipmentCategory 
+{
+    Head,Torso,Legs,Feet
 }
