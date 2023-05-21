@@ -39,12 +39,23 @@ public class Player : MonoBehaviour
             if (CanBuy) Singleton.Instance.UIManager.ShowShop(true);
             playerActions.InteractInput = false;
         } 
+
+        else if (playerActions.ToggleInventoryInput) 
+        {
+            Singleton.Instance.UIManager.ShowInventory(true);
+            playerActions.ToggleInventoryInput = false;
+        }
         
         //UI Action Map
-        if (playerActions.CancelInput) 
+        else if (playerActions.CancelInput) 
         {
             Singleton.Instance.UIManager.ClosePanel();
             playerActions.CancelInput = false;
+        }
+        else if (playerActions.SubmitInput)
+        {
+            Singleton.Instance.UIManager.CurrentOpenPanel.GetComponent<SelectableBoxPanel>().SelectBox();
+            playerActions.SubmitInput = false;
         }
     }
 

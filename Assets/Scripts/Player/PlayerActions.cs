@@ -28,7 +28,7 @@ public class PlayerActions : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
-        movementInput = value.Get<Vector2>();
+        movementInput = value.Get<Vector2>().normalized;
         animationController.SetAnimationState(movementInput);
     }
 

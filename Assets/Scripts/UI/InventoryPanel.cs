@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryPanel : MonoBehaviour
+public class InventoryPanel : MonoBehaviour, SelectableBoxPanel
 {
     // Start is called before the first frame update
     void Start()
@@ -15,4 +15,12 @@ public class InventoryPanel : MonoBehaviour
     {
         
     }
+
+    #region SelectableBoxPanelInterface
+    public void SelectBox()
+    {
+        Debug.Log("Selecting Inventory Box.");
+    }
+    GameObject SelectableBoxPanel.GameObject => gameObject;
+    #endregion
 }
