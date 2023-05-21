@@ -6,4 +6,9 @@ public class Vendor : MonoBehaviour
 {
     public List<Item> Items;
 
+
+    private void OnEnable()
+    {
+        Items = new List<Item>(Items);
+    }
 }

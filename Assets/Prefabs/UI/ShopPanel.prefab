@@ -645,6 +645,11 @@ PrefabInstance:
       propertyPath: toSell
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97581f33bf49b444b911a73ad8ef2d9, type: 3}
 --- !u!224 &156296506545131785 stripped
@@ -3044,6 +3049,11 @@ PrefabInstance:
       propertyPath: toSell
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97581f33bf49b444b911a73ad8ef2d9, type: 3}
 --- !u!224 &4209733709590130054 stripped
@@ -3184,6 +3194,11 @@ PrefabInstance:
     - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
         type: 3}
       propertyPath: toSell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3739,6 +3754,11 @@ PrefabInstance:
       propertyPath: toSell
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97581f33bf49b444b911a73ad8ef2d9, type: 3}
 --- !u!114 &2912045767151588080 stripped
@@ -4018,6 +4038,11 @@ PrefabInstance:
       propertyPath: toSell
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97581f33bf49b444b911a73ad8ef2d9, type: 3}
 --- !u!114 &2998061278764833593 stripped
@@ -4158,6 +4183,11 @@ PrefabInstance:
     - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
         type: 3}
       propertyPath: toSell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4985,6 +5015,11 @@ PrefabInstance:
     - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
         type: 3}
       propertyPath: toSell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5817,6 +5852,11 @@ PrefabInstance:
       propertyPath: toSell
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97581f33bf49b444b911a73ad8ef2d9, type: 3}
 --- !u!114 &1224402470069927892 stripped
@@ -5957,6 +5997,11 @@ PrefabInstance:
     - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
         type: 3}
       propertyPath: toSell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6379,6 +6424,11 @@ PrefabInstance:
     - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
         type: 3}
       propertyPath: toSell
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385709666481726093, guid: b97581f33bf49b444b911a73ad8ef2d9,
+        type: 3}
+      propertyPath: playerCanSell
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

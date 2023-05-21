@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ItemBox : MonoBehaviour
 {
     public Item CurrentItem { get => currentItem; }
-    public bool toSell = false;
+    public bool playerCanSell = false;
     Item currentItem;
     [SerializeField] Image Icon;
     Color filledCollor = new Color(255, 255, 255, 255);

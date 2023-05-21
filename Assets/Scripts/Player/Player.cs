@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     {
         playerInput = GetComponentInChildren<PlayerInput>();
         playerActions = GetComponentInChildren<PlayerActions>();
-        
+        Inventory = Instantiate(Inventory);
         // Subscribe to the PanelShown and PanelClosed events from UIManager
         UIManager.PanelShown += OnPanelShown;
         UIManager.PanelClosed += OnPanelClosed;

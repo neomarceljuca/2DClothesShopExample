@@ -10,9 +10,12 @@ public class Inventory : ScriptableObject
     public List<Item> CurrentItems;
 
 
-    private void Awake()
+ 
+
+    public void EditMoney(int delta) 
     {
-        CurrentItems = new List<Item>();
+        CurrentMoney += delta;
+        Singleton.Instance.UIManager.UpdateCurrentMoney();
     }
 
 }
