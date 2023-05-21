@@ -7,10 +7,12 @@ public class ShopTrigger : MonoBehaviour
 
     Collider2D shopCollider;
     public string playerTag = "Player";
+    [SerializeField] GameObject InteractionSign;
 
     private void Awake()
     {
         shopCollider = GetComponent<Collider2D>();
+        if(InteractionSign != null) InteractionSign.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,6 +22,7 @@ public class ShopTrigger : MonoBehaviour
             Player player = other.GetComponentInParent<Player>();
             if (player != null)
             {
+                InteractionSign.SetActive(true);
                 player.CanBuy = true;
             }
         }
@@ -32,6 +35,7 @@ public class ShopTrigger : MonoBehaviour
             Player playerComponent = other.GetComponentInParent<Player>();
             if (playerComponent != null)
             {
+                InteractionSign.SetActive(false);
                 playerComponent.CanBuy = false;
             }
         }
