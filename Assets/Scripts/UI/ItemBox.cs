@@ -7,6 +7,7 @@ public class ItemBox : MonoBehaviour
 {
     public Item CurrentItem { get => currentItem; }
     public bool playerCanSell = false;
+    public bool isEquipped = false;
     Item currentItem;
     [SerializeField] Image Icon;
     Color filledCollor = new Color(255, 255, 255, 255);

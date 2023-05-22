@@ -15,4 +15,5 @@ MonoBehaviour:
   Sprite: {fileID: 2056608329, guid: 4c4a05ee15b835b4284b700ecfe00d25, type: 3}
   SourceSpriteSheet: {fileID: 2800000, guid: 4c4a05ee15b835b4284b700ecfe00d25, type: 3}
   cost: 100
+  category: 1
   description: The ultimate torso shield for warriors with killer moves.

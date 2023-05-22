@@ -8,9 +8,9 @@ public class Inventory : ScriptableObject
 {
     public int CurrentMoney = 1000;
     public List<Item> CurrentItems;
+    public List<Item> EquippedItems;
 
 
- 
 
     public void EditMoney(int delta) 
     {

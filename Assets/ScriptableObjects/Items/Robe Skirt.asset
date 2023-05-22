@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: -743400172, guid: 5fa445b06198c62488eb81c523c40bfc, type: 3}
   SourceSpriteSheet: {fileID: 2800000, guid: 5fa445b06198c62488eb81c523c40bfc, type: 3}
   cost: 75
-  category: 0
+  category: 2
   description: A flowing skirt that adds elegance and grace to spellcasting, because
     even witches and wizards deserve to look fabulous while conjuring their magic.
