@@ -77,14 +77,22 @@ public class AnimationController : MonoBehaviour
     {
         List<Item> Equipped = Singleton.Instance.currentPlayer.Inventory.EquippedItems;
 
-        foreach(Item Equipment in Equipped) 
+        //clear animators
+        foreach (CustomAnimator animator in clothesAnimators) 
+        {
+            animator.gameObject.GetComponent<SpriteRenderer>().sprite = null;
+            animator.sourceSpriteSheet = null;
+        } 
+
+        //update to the currently equipped ones
+        foreach (Item Equipment in Equipped) 
         {
             EquipmentCategory currentCategory = Equipment.category;
 
             if (currentCategory == EquipmentCategory.Head) HeadAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
-            if (currentCategory == EquipmentCategory.Torso) TorsoAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
-            if (currentCategory == EquipmentCategory.Legs) LegsAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
-            else FeetAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
+            else if (currentCategory == EquipmentCategory.Torso) TorsoAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
+            else if (currentCategory == EquipmentCategory.Legs) LegsAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
+            else if (currentCategory == EquipmentCategory.Feet) FeetAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
         }
 
     }

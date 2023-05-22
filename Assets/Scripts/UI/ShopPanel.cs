@@ -51,6 +51,8 @@ public class ShopPanel : MonoBehaviour, SelectableBoxPanel
             ItemName.text = CurrentlySellected.CurrentItem.name;
             ItemDescription.text = CurrentlySellected.CurrentItem.description;
             ItemCost.text = CurrentlySellected.CurrentItem.cost.ToString();
+
+            if (CurrentlySellected.playerCanSell) ItemCost.text += " (Sell)";
         }
         else 
         {
