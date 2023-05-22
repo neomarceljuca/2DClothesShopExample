@@ -6,8 +6,14 @@ public class AnimationController : MonoBehaviour
 {
     public CustomAnimator baseCharacterAnimator;
     public CustomAnimator[] clothesAnimators;
+    public CustomAnimator HeadAnim;
+    public CustomAnimator TorsoAnim;
+    public CustomAnimator LegsAnim;
+    public CustomAnimator FeetAnim;
+
     private AnimationState currentAnimationState;
     [SerializeField] float frameRate = 16f; // Frames per second
+    float frameInterval;
     private float timer = 0f;
     private int currentIndex = 0;
 
@@ -17,6 +23,7 @@ public class AnimationController : MonoBehaviour
     private Dictionary<AnimationState, int[]> directionFrames = new Dictionary<AnimationState, int[]>();
     private void Awake()
     {  
+        frameInterval = 1f / frameRate;
         //Assign respective frames for each direction and state; They are the same for every spritesheet.
         directionFrames.Add(AnimationState.IdleUp, new int[] { 0 });
         directionFrames.Add(AnimationState.IdleLeft, new int[] { 9 });
@@ -35,11 +42,6 @@ public class AnimationController : MonoBehaviour
 
     public void HandleAnimations() 
     {
-        //TO DO: Set each current equipment animation according to currentAnimationState. Already works for player base animation
-
-        // Calculate the time interval for each frame
-        float frameInterval = 1f / frameRate;
-
         // Update the timer
         timer += Time.deltaTime;
 
@@ -51,7 +53,13 @@ public class AnimationController : MonoBehaviour
 
             // Set the sprite based on the current frame index + safety check
             if (currentIndex < directionFrames[currentAnimationState].Length)
+            {
                 baseCharacterAnimator.SetSpriteByFrame(directionFrames[currentAnimationState][currentIndex]);
+                foreach (CustomAnimator clothesAnimator in clothesAnimators)
+                {
+                    clothesAnimator.SetSpriteByFrame(directionFrames[currentAnimationState][currentIndex]);
+                }
+            }
 
             currentIndex++;
 
@@ -61,6 +69,22 @@ public class AnimationController : MonoBehaviour
                 // Reset the frame index
                 currentIndex = 0;
             }
+        }
+
+    }
+
+    public void UpdateEquipmentVisuals()
+    {
+        List<Item> Equipped = Singleton.Instance.currentPlayer.Inventory.EquippedItems;
+
+        foreach(Item Equipment in Equipped) 
+        {
+            EquipmentCategory currentCategory = Equipment.category;
+
+            if (currentCategory == EquipmentCategory.Head) HeadAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
+            if (currentCategory == EquipmentCategory.Torso) TorsoAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
+            if (currentCategory == EquipmentCategory.Legs) LegsAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
+            else FeetAnim.sourceSpriteSheet = Equipment.SourceSpriteSheet;
         }
 
     }

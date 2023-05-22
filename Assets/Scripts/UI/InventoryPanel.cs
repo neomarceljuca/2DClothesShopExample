@@ -119,9 +119,9 @@ public class InventoryPanel : MonoBehaviour, SelectableBoxPanel
             CurrentlySellected.AssignItem(null);
             UpdatePlayerItemsDisplay();
         }
-        
 
 
+        player.AnimationController.UpdateEquipmentVisuals();
     }
     GameObject SelectableBoxPanel.GameObject => gameObject;
     #endregion

@@ -19,6 +19,7 @@ public class CustomAnimator : MonoBehaviour
 
     public void SetSpriteByFrame(int frameNumber)
     {
+        if (sourceSpriteSheet == null) return;
         // Calculate the row and column of the frame based on the frame number
         int row = frameNumber / columns;
         int column = frameNumber % columns;

@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
     public Inventory Inventory;
     public PlayerActions playerActions;
     public bool CanBuy = false;
+    public AnimationController AnimationController;
 
 
     private void Awake()
     {
+        AnimationController = GetComponentInChildren<AnimationController>();
         playerInput = GetComponentInChildren<PlayerInput>();
         playerActions = GetComponentInChildren<PlayerActions>();
         Inventory = Instantiate(Inventory);
@@ -58,6 +60,8 @@ public class Player : MonoBehaviour
             playerActions.SubmitInput = false;
         }
     }
+
+    
 
 
 
